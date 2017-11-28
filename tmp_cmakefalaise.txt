@@ -1,0 +1,31 @@
+// - Installing Bayeux and Falaise
+
+* Bayeux
+
+ - cmake
+$ cmake -DBoost_NO_SYSTEM_PATHS=TRUE \
+      -DCMAKE_INSTALL_PREFIX=/home/girardcarillo/Workdir/snware/bayeux/install \
+      -DCMAKE_PREFIX_PATH=/home/girardcarillo/Workdir/snware/cadfaelbrew \
+        ../repo
+
+ - installing dependencies
+
+$ brew install <denpendency (boost...)>
+
+
+* Falaise
+
+ - cmake
+$ cmake -DCMAKE_BUILD_TYPE:STRING=Release \
+-DCMAKE_PREFIX_PATH="/home/girardcarillo/Workdir/snware/bayeux/install/;home/girardcarillo/workdir/cadfaelbrew/"  \
+-DCMAKE_INSTALL_PREFIX=~/Workdir/snware/falaise/install \
+-DFALAISE_WITH_DEVELOPER_TOOLS=ON \
+-DFALAISE_CXX_STANDARD=14 \
+-DFALAISE_COMPILER_ERROR_ON_WARNING=OFF \
+-DFALAISE_WITH_DOCS=ON \
+-DFALAISE_ENABLE_TESTING=ON \
+ ../repo/
+
+$(brew --prefix);$(brew --prefix qt5-base)
+-DCMAKE_MODULE_PATH="~/Workdir/snware/bayeux/build/BuildProducts/lib/cmake/Bayeux-3.2.0/" \
+;~/workdir/cadfaelbrew/

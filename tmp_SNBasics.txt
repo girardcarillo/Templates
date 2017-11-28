@@ -1,0 +1,19 @@
+// - Basic use of SuperNEMO binaries
+
+- =flsimulate= :: simulation binary
+
+$ flsimulate --config "flsimulate.conf" --output-metadata-file "dummy.meta" --output-file "test.brio"
+
+- =flreconstruct= :: reconstruction binary
+
+$ flreconstruct \
+          --pipeline "flreconstruct.conf" \
+          --input-metadata-file "dummy.meta" \
+          --input-file "test.brio" \
+          --output-metadata-file "dummy_rec.meta" \
+          --embedded-metadata=0 \
+          --output-file "test_rec.brio"
+
+- =flvisualize= :: event visualization
+
+$ flvisualize -i flRec.brio&
