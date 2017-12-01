@@ -1,3 +1,7 @@
-// - Copying with rsync
+// - Copying on NEMO LAL disk with rsync
 
 rsync-copy <file name> girardcarillo@lx3.lal.in2p3.fr:/sps/nemo/girardcarillo/
+
+// - Copying on local machine
+
+scp -r girardcarillo@lx3.lal.in2p3.fr:/sps/nemo/girardcarillo/ <target path on local machine>
