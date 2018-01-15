@@ -1,0 +1,10 @@
+// - Entering in CC Lyon
+
+* connecting
+ssh girardca@ccage.in2p3.fr
+
+* change password
+kpasswd
+
+*Going to the Falaise Directory
+/sps/nemo/scratch/cgirard
