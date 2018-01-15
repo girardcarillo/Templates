@@ -16,4 +16,4 @@ $ flreconstruct \
 
 - =flvisualize= :: event visualization
 
-$ flvisualize -i flRec.brio&
+$ flvisualize --load-dll Falaise_ParticleIdentification@/home/girardcarillo/Workdir/snware/falaise/install/lib/Falaise/modules/ -i test.brio

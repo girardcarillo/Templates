@@ -24,7 +24,11 @@ $ cmake -DCMAKE_BUILD_TYPE:STRING=Release \
 -DFALAISE_COMPILER_ERROR_ON_WARNING=OFF \
 -DFALAISE_WITH_DOCS=ON \
 -DFALAISE_ENABLE_TESTING=ON \
- ../repo/
+../repo/
+
+OU
+
+$ cmake -DCMAKE_PREFIX_PATH="/home/girardcarillo/Workdir/snware/bayeux/install/;home/girardcarillo/workdir/cadfaelbrew/" -DCMAKE_INSTALL_PREFIX=~/Workdir/snware/falaise/install ~/Workdir/snware/falaise/repo
 
 $(brew --prefix);$(brew --prefix qt5-base)
 -DCMAKE_MODULE_PATH="~/Workdir/snware/bayeux/build/BuildProducts/lib/cmake/Bayeux-3.2.0/" \
