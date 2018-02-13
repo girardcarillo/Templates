@@ -1,19 +1,38 @@
-// - Basic use of SuperNEMO binaries
+* Binaires SuperNEMO
 
 - =flsimulate= :: simulation binary
 
-$ flsimulate --config "flsimulate.conf" --output-metadata-file "dummy.meta" --output-file "test.brio"
+$ flsimulate --config "$CONFIG/flsimulate.conf" --output-metadata-file "dummy.meta" --output-file "test.brio"
 
-- =flreconstruct= :: reconstruction binary
+- =flreconstruct= :: reconstruction binary (Compile flreconstruct after each modification of the pipeline file)
 
 $ flreconstruct \
-          --pipeline "flreconstruct.conf" \
-          --input-metadata-file "dummy.meta" \
-          --input-file "test.brio" \
-          --output-metadata-file "dummy_rec.meta" \
+          --pipeline "$CONFIG/flreconstruct.conf" \
+          --input-metadata-file "caca.meta" \
+          --input-file "caca.brio" \
+          --output-metadata-file "caca_rec.meta" \
           --embedded-metadata=0 \
-          --output-file "test_rec.brio"
+          --output-file "caca_rec.brio"
 
-- =flvisualize= :: event visualization
+- =flvisualize= :: visualization binary
 
-$ flvisualize --load-dll Falaise_ParticleIdentification@/home/girardcarillo/Workdir/snware/falaise/install/lib/Falaise/modules/ -i test.brio
+$ flvisualize --load-dll Falaise_ParticleIdentification@$WORKDIR/snware/falaise/install/lib/Falaise/modules/ -i caca.brio&
+
+* Compile falaise after each modification of modules in $WORKDIR/snware/falaise/repo
+
+$ aggregator install falaise
+
+* Source the SuperNEMO software
+
+$ zsh
+$ aggregator setup all
+
+* Display variant options
+
+$ bxvariant_inspector \
+          --datatools::logging="debug"  \
+          --load-dll "Falaise@$(flquery --libdir)" \
+          --datatools::resource-path="falaise@$(flquery --resourcedir)" \
+          --variant-config \
+            "@falaise:config/snemo/demonstrator/simulation/geant4_control/2.1/variants/repository.conf" \
+          --variant-store "vprofile.conf" -a doc
