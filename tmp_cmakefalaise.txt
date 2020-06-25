@@ -17,8 +17,8 @@ $ brew install <denpendency (boost...)>
 
  - cmake
 $ cmake -DCMAKE_BUILD_TYPE:STRING=Release \
--DCMAKE_PREFIX_PATH="/home/girardcarillo/Workdir/snware/bayeux/install/;home/girardcarillo/workdir/cadfaelbrew/"  \
--DCMAKE_INSTALL_PREFIX=~/Workdir/snware/falaise/install \
+-DCMAKE_PREFIX_PATH="/sps/nemo/scratch/cgirard/Workdir/snware/bayeux/install/"  \
+-DCMAKE_INSTALL_PREFIX="/sps/nemo/scratch/cgirard/Workdir/snware/falaise/install/" \
 -DFALAISE_WITH_DEVELOPER_TOOLS=ON \
 -DFALAISE_CXX_STANDARD=14 \
 -DFALAISE_COMPILER_ERROR_ON_WARNING=OFF \
